@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erickão Trader</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-image {
+    flex: 1 1 350px;
+}
+
+.info-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+}
+
+.info-text {
+    flex: 2 1 500px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: -25px;
+}
+
+.info-text h1 {
+    font-size: 28px;
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+.info-text p {
+    white-space: pre-line;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    margin-top: 50px;
+}
+.info-text {
+    max-width: 50%;
+    text-align: left;
+}
+.info-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text {
+    max-width: 1100px;
+    width: 100%;
+    color: white;
+    text-align: justify;
+}
+
+.text h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #00aaff;
+}
+
+.text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.content {
+    flex: 1 1 350px;
+    background-color: #111;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+}
+
+.content img.logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00aaff;
+    text-align: center;
+}
+
+.content p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+form button {
+    width: 250px;
+    margin: 0 auto; 
+    display: block; 
+    background-color: #00c853;
+    color: white;
+    font-size: 14px;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #00c853;
+}
+
+.text {
+    flex: 1 1 350px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.text a {
+    color: #00aaff;
+    text-decoration: underline;
+}
+
+.text strong {
+    color: #00aaff;
+}
+
+.mentoria-section {
+    max-width: 80%;
+    margin-top: 50px;
+    text-align: center;
+}
+.mentoria-title {
+    font-size: 1.5rem;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+.mentoria-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.mentoria-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+        
+.opcao-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+  .opcao-titulo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+  .opcao-titulo span {
+    color: #00aaff;
+}
+
+.opcao-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+}
+
+.opcao-lista li {
+    margin-bottom: 16px;
+    padding-left: 28px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.opcao-lista li::before {
+    content: "📈";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.opcao-botao {
+    display: inline-block;
+    background: linear-gradient(90deg, #00c853, #00c853);
+    color: white;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.opcao-botao:hover {
+    transform: scale(1.05);
+}
+
+.bonus-section {
+  background-color: #000;
+  color: #fff;
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.bonus-title {
+  color: #00c853;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bonus-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.bonus-section p::before {
+  content: "✔";
+  color: #00c853;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.garantia {
+  max-width: 800px;
+  margin: 50px auto 0;
+  text-align: center;
+  color: #fff;
+  background-color: #111;
+  padding: 25px 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.garantia h3 {
+  color: #00c853;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.garantia p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.duvidas-link {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.duvidas-link:hover {
+  color: #00c853;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+
+.rodape {
+  text-align: center;
+  padding: 30px 15px;
+  color: #777;
+  font-size: 0.85rem;
+  border-top: 1px solid #222;
+  margin-top: 50px;
+}
+
+.discord-link {
+    color: green; /* Cor verde */
+    font-weight: bold; /* Texto em negrito */
+    text-decoration: none; /* Remove o sublinhado */
+  }
+
+  .discord-link:hover {
+    color: darkgreen; /* Muda a cor quando passar o mouse por cima */
+  }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .content,
+    .text {
+        padding: 20px;
+    }
+
+    .text{
+        width: 90vw;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content h2 {
+        font-size: 20px;
+    }
+
+    .info-section {
+        width: 90vw;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+    }
+
+    .info-text {
+        width: 90vw;
+        max-width: none;
+        padding: 0;
+       box-sizing: border-box;
+    }  
+
+    .info-text h1 {
+        font-size: 5.5vw; /* Responsivo: ajusta conforme a largura da tela */
+        text-align: center; /* Opcional: centraliza o título */    
+    }
+
+    .info-text p {
+        font-size: 4vw; /* Responsivo também */
+        width: 100%;
+        text-align: justify;
+    }
+
+   
+    .mentoria-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .opcao-titulo {
+      font-size: 1.5rem;
+    }
+
+    .opcao-lista li {
+      font-size: 0.95rem;
+    }
+
+    .opcao-botao {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .bonus-title {
+    font-size: 1.3rem;
+   }
+
+  .bonus-section p {
+    font-size: 0.95rem;
+    padding-left: 25px;
+   }
+            
+}
+     
+    </style>
+</head>
+<body>
+    <div class="info-section">
+        <div class="info-image">
+            <img src="image/erickao.jpg" alt="Interface do curso">
+        </div>
+        <div class="info-text">
+            <h1>QUEM É O ERICKÃO?</h1>
+            <p>Trader profissional com 10 anos de experiência no mercado financeiro, Erickão é reconhecido por sua atuação consistente na B3 e por formar centenas de alunos no Brasil e no Mundo. 
+
+                Atualmente, atua no maior mercado do mundo, o Forex, operando em alta performance com seus alunos e clientes em uma sala
+                exclusiva no Discord.
+
+                Erikão mantém uma média de 15% de lucro ao mês,( renda variável ) operando com disciplina, leitura técnica apurada e foco total em consistência.
+                Sua expertise em ativos globais o colocou entre os traders mais respeitados da atualidade, combinando visão estratégica, gestão de risco e resultado comprovado.
+
+                Agora, você tem a oportunidade de aprender ao vivo com ele, acompanhando de perto as decisões que constroem resultados sólidos todos os dias, entre no <a href="https://discord.gg/seu_link_do_grupo" target="_blank" class="discord-link">GRUPO VIP</a> e acompanhece em tempo real.</p>
+        </div>
+    </div>
+
+        <div class="text">
+            <h1>Descubra o caminho definitivo para transformar sua realidade financeira com o único curso de Day Trade que você realmente precisa.</h1>
+            <p>Um treinamento completo, passo a passo, onde você aprende desde o absoluto zero até o nível avançado, com conteúdos práticos, objetivos e baseados em estratégias que realmente funcionam no mercado atual. Você não estará sozinho nessa jornada: além das aulas, você terá acesso exclusivo às minhas próprias operações ao vivo dentro de um servidor privado no Discord, onde poderá acompanhar, tirar dúvidas e aprender na prática com quem vive disso todos os dias.
+
+                Diferente da maioria dos cursos que estão desatualizados e vendem promessas vazias, aqui você encontrará conteúdo real, atualizado constantemente, com base nas mudanças do mercado e em estratégias que acompanham a dinâmica dos dias de hoje. Além disso, o material é apresentado com qualidade audiovisual de alto nível, facilitando seu entendimento e tornando sua experiência de aprendizado muito mais leve e eficiente.
+                Ao entrar para o treinamento, você estará se juntando a uma comunidade de traders comprometidos com a evolução constante, onde o aprendizado não para e o suporte é contínuo. Aqui você será desafiado a crescer, desenvolver seu potencial máximo e trilhar um novo caminho em direção à liberdade financeira.
+
+                Se você está cansado de perder tempo com promessas vazias, chegou a hora de fazer parte de algo diferente, verdadeiro e transformador. O mercado financeiro pode ser a sua virada — e eu vou te mostrar como.</p>
+        </div>
+    </div>
+
+    <div class="mentoria-section">
+        <h2 class="mentoria-title">O que você irá aprender na Mentoria</h2>
+        <div class="mentoria-grid">
+            <div class="mentoria-item">Como fazer dinheiro mensalmente na bolsa de valores, mesmo começando com pouco</div>
+            <div class="mentoria-item">Como se proteger quando o mercado estiver em queda para diminuir ao máximo suas perdas</div>
+            <div class="mentoria-item">Como funcionam e como escolher as melhores entradas do mercado para sempre aproveitar os grandes movimentos, mesmo que você seja um completo iniciante</div>
+            <div class="mentoria-item">Como gerenciar as operações que você tem em andamento</div>
+        </div>
+    </div>
+
+    <div class="opcao-container">
+        <h1 class="opcao-titulo">
+          Seguindo meu método, você conseguirá <span>ganhar com day trade</span>, mesmo que:
+        </h1>
+        <ul class="opcao-lista">
+          <li>Nunca tenha feito nenhum investimento</li>
+          <li>Não faça ideia do que sejam as operações em day trade</li>
+          <li>Esteja começando com pouco capital</li>
+          <li>Já tenha tentado operar e acabou no prejuízo</li>
+          <li>Já entenda muito bem de day trade e queira aumentar seu conhecimento ainda mais</li>
+        </ul>
+        <a href="#content" class="opcao-botao">QUERO GANHAR COM DAY TRADE</a>
+      </div>
+
+    <div class="bonus-section">
+        <h2 class="bonus-title">E não acaba por aí...</h2>
+        <p>Se inscrevendo para o grupo VIP na abertura da Mentoria do Erickão, além de um desconto no curso, ainda irá ganhar diversos bônus!</p>
+        <p>As vagas para a mentoria do Erickão abrem pouquíssimas vezes no ano. E nos próximos dias irá abrir novamente!</p>
+        <p>Entrando no grupo VIP através do formulário abaixo, você irá receber o link para entrar no curso antes de qualquer um, ganhará desconto para se inscrever, e terá direito a muitos bônus!</p>
+    </div>
+
+    <div class="container">
+        <div id=content class="content">
+            <img src="image/erickaologo.png" alt="Logo Mentoria do Erickão" class="logo">
+            <h2>O único curso da bolsa de valores que você precisará para ganhar muito dinheiro.</h2>
+            <p>As vagas para a mentoria do Erikão irão abrir novamente!</p>
+            <form>
+                <input type="text" placeholder="Digite seu nome" required>
+                <input type="tel" placeholder="Digite seu WhatsApp com DDD" required>
+                <input type="email" placeholder="Digite seu melhor e-mail" required>
+                <a onclick="window.open('https://wa.me/message/6RCLH6KD3LVCM1', '_blank')" target="_blank">
+                    <button type="button">QUERO ENTRAR NO GRUPO VIP</button>
+                </a>
+            </form>
+    </div>
+
+    <div class="garantia">
+        <h3>DENTRO DO GRUPO VIP</h3>
+        <p>Você terá acesso a conteúdos exclusivos, suporte direto e a chance real de transformar seus resultados. 
+            Te aguardo dentro do grupo para tirar suas dúvidas e crescermos juntos!
+        </p>
+      
+        <a onclick="window.open('https://wa.me/message/6RCLH6KD3LVCM1', '_blank')" class="duvidas-link" target="_blank">
+          <img src="image/logo.watts.png" alt="WhatsApp" class="whatsapp-icon">
+          DÚVIDAS
+        </a>
+      </div>
+      
+    <footer class="rodape">
+        <p>© 2025 Mentoria do Erickão - Todos os direitos reservados.</p>
+        <p>Este site não é afiliado ao Facebook, Google ou qualquer plataforma. Os resultados podem variar de pessoa para pessoa.</p>
+    </footer>
+
+
+</body>
+</html>

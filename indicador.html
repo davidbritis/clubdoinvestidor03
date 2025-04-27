@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash 23 - Indicador</title>
+
+<style>
+  
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #fff; /* Texto branco para contraste */
+  background:#000;
+  margin: 0;
+  padding: 0;
+}
+
+/*prop*/
+.prop {
+  text-align: center;
+  padding: 20px;
+}
+
+.prop h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #3b82f6;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.feature {
+  padding: 20px;
+  background: #0a1e33;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.feature img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  color: #3b82f6;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text-content h1{
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.text-content p{
+  font-size: 1.2rem;
+}
+
+.image-content {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza a imagem */
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 5px;
+}
+
+.test {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza a imagem */
+}
+
+.test img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+/* Botão centralizado abaixo */
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  background: #ff9800;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e68900;
+}
+
+/* Demonstração */
+#demonstracao {
+  padding: 10px 0;
+  text-align: center;
+}
+
+#demonstracao h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.demo-button {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.demo-button .button {
+  background-color: #00c851; /* verde */
+  color: #000; /* letras pretas */
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.demo-button .button:hover {
+  background-color: #007e33; /* verde mais escuro no hover */
+}
+
+.table {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.table h1{
+  text-align: center;
+}
+
+.table p{
+  text-align: center;
+  font-size: 20px;
+}
+
+.grid-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.btn {
+  display: block;
+  margin: 50px auto 0;
+  padding: 20px 50px;
+  background: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+        
+.btn:hover {
+  background: #00cc6a;
+}
+
+h1 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Contagem Regressiva */
+#contagem {
+  padding: 50px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin: -80px 0;
+}
+
+#contagem h2 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+#contagem p {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#timer {
+  font-size: 10rem;
+  font-weight: bold;
+  color: red;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  background: rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.check {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.cross {
+  color: #FF4C4C;
+  font-weight: bold;
+}
+
+    
+
+/* Benefícios */
+#beneficios {
+  padding: 40px 0;
+  text-align: center;
+}
+
+  #beneficios h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.beneficios-lista {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.beneficio {
+  flex: 1 1 300px;
+  margin: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+  border-radius: 10px;
+  color: #fff;
+}
+
+/* Estatísticas */
+  #estatisticas {
+  padding: 40px 0;
+  text-align: center;
+}
+
+#estatisticas h2 {
+  font-size: 2rem;
+   margin-bottom: 20px;
+}
+
+.estatisticas-lista {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.estatistica {
+  flex: 1 1 200px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.estatistica h3 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.estatistica p {
+ font-size: 1.2rem;
+}
+
+.call-to-action {
+    color: white; /* Texto branco */
+    padding: 20px 20px; /* Espaçamento interno */
+    margin: 0 auto;
+    max-width: 1000px; /* Limita a largura da seção */
+    margin-top: -80px;
+}
+
+.call-to-action h1 {
+    font-weight: bold; /* Deixa o título principal em negrito */
+    font-size: 50px; /* Tamanho da fonte para o título principal */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+   text-align: center;
+}
+
+.call-to-action h2 {
+    font-weight: bold; /* Deixa os subtítulos em negrito */
+    font-size: 24px; /* Tamanho da fonte para os subtítulos */
+    margin-bottom: 10px; /* Espaço abaixo de cada subtítulo */
+    text-align: center;
+}
+    
+
+/*Cards de preço*/
+.card-container{
+    display:flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px;
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 20px;
+    font-family: sans-serif;
+    background-color: #1A1A1A;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    
+}
+
+
+.card {
+    background-color: #111111;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    padding: 10px 0;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.card-price {
+    font-size: 2em;
+     font-weight: bold;
+    margin: 5px 0;
+}
+
+.card-details{
+     font-size: 0.9em;
+     margin: 5px 0 10px 0;
+}
+
+.card-body {
+    padding: 10px 0;
+}
+
+.card-body > p{
+    font-size: 0.9em;
+    margin: 8px 0;
+}
+
+.card-body li {
+    text-align: justify;
+}
+
+.card-button {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.card-button:hover {
+    background-color: #218838;
+}
+
+.card-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between buttons in footer */
+    padding-top: 10px;
+}
+
+
+.button-renew{
+  background-color: #a72828;
+}
+
+.button-reset{
+   background-color:  #28a745;
+}
+
+.card-unavailable {
+  background-color: #333333;
+}
+
+.button-unavailable {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: not-allowed; /* Indicate not clickable */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    pointer-events: none; /* Disable click */
+}
+
+ 
+
+    /* Depoimentos */
+    #depoimentos {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #depoimentos h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .depoimentos-lista {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .depoimento {
+      flex: 1 1 300px;
+      margin: 10px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+      border-radius: 10px;
+    }
+
+    /* Selos de Garantia */
+    #garantia {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #garantia h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .selos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .selo {
+      max-width: 250px;
+    }
+
+    /* Rodapé */
+    footer {
+      /*background: rgba(0, 0, 0, 0.7);  Fundo semi-transparente */
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .beneficios-lista, .depoimentos-lista, .estatisticas-lista {
+    flex-direction: column;
+  }
+
+  .beneficio, .depoimento, .estatistica {
+    margin: 10px 0;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content, .image-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-content {
+    justify-content: center;
+  }
+
+  .text-content h1,
+  .text-content p {
+    text-align: center;
+  }
+
+  /*Chamada para ação*/
+   .call-to-action {
+    margin-top: -75px;
+  }
+
+.call-to-action h1 {
+  font-size: 28px; /* Ajusta o tamanho para dispositivos pequenos */
+}
+
+.call-to-action h2 {
+  font-size: 20px; /* Ajusta o tamanho para dispositivos pequenos */
+}
+
+.grid-table {
+    grid-template-columns: 1fr; /* Apenas uma coluna no celular */
+  }
+
+    /* Estilos dos cards */
+    .card {
+    background-color: #111111;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    .card-header {
+    padding: 10px 0;
+    }
+
+    .card-title {
+    font-size: 1.2em;
+    margin: 0;
+    }
+
+    .card-price {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 5px 0;
+    }
+
+    .card-details {
+    font-size: 0.9em;
+    margin: 5px 0 10px 0;
+    }
+
+    .card-body {
+    padding: 10px 0;
+    }
+
+    .card-body > p {
+    font-size: 0.9em;
+    margin: 8px 0;
+    }
+
+    .card-button {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    }
+
+    .card-button:hover {
+    background-color: #218838;
+    }
+
+    .card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between buttons in footer */
+    padding-top: 10px;
+    }
+
+    .button-renew {
+    background-color: #28a745;
+    }
+
+    .button-reset {
+    background-color: #28a745;
+    }
+
+    .card-unavailable {
+    background-color: #333333;
+    }
+
+    .button-unavailable {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: not-allowed; /* Indicate not clickable */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    pointer-events: none; /* Disable click */
+    }
+
+     /*tabela de diferenças*/
+
+     table {
+        display: block;
+    }
+
+    thead {
+        display: none
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 2px 5px rgba (0, 0, 0, 0.2);
+       
+    }
+
+    .titulo{
+      justify-content: center;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 30px;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #fff;
+    }
+
+}
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+
+    <div class="prop">
+      <h1>
+          CANSADO DE OPERAR COM DEZENAS DE INDICADORES, PERDER HORAS ANALISANDO GRÁFICOS E AINDA ASSIM NÃO <span class="highlight">TER OS RESULTADOS QUE GOSTARIA?</span>
+      </h1>
+
+      <H1>O <span class="highlight">CASH 23 </span>FAZ TODA A ANÁLISE PARA VOCÊ....</H1>
+      
+      <div class="features">
+          <div class="feature">
+              <img src="image/1.png" alt="Análise">
+              <h3>Análise Simplificada:</h3>
+              <p>Nosso algoritmo avançado processa múltiplos fatores do mercado.</p>
+          </div>
+          <div class="feature">
+              <img src="image/2.png" alt="Entrada/Saída">
+              <h3>Pontos de Entrada/Saída:</h3>
+              <p>Identificação clara dos melhores momentos para operar.</p>
+          </div>
+          <div class="feature">
+              <img src="image/3.png" alt="Gestão de Risco">
+              <h3>Gestão de Risco Integrada:</h3>
+              <p>Sugestões de stop loss e take profit otimizadas.</p>
+          </div>
+          <div class="feature">
+              <img src="image/4.png" alt="Atualizações">
+              <h3>Atualizações em Tempo Real:</h3>
+              <p>Adaptação instantânea às mudanças do mercado.</p>
+          </div>
+      </div>
+  </header>
+
+    <div class="container">
+      <div class="header-content">
+        <div class="text-content">
+          <h1><span class="highlight">JÁ PENSOU EM OPERAR 5 MINUTOS DO SEU DIA E JÁ BATER A META?</span></h1>
+          <h1>Temos o indicador que transforma traders frustrados em operadores consistentes com resultados diários</h1>
+          <p>O indicador que analisa dados em tempo real e aumenta sua precisão em mais de 80%.</p>
+        </div>
+        <div class="image-content">
+          <img src="image/IMAGEM CASH 23.png" alt="Indicador de Trading">
+        </div>
+      </div>
+    </div>
+  
+  <!-- Demonstração -->
+<!--section id="demonstracao">
+  <div class="demo">
+    <h2>Veja o Indicador em Ação</h2>
+    <div class="video-container">
+      <video width="560" height="315" controls>
+        <source src="image/cach.mp4" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
+    </div>
+  </div>
+</section-->
+
+<div class="test">
+  <img src="image/teste.png" alt="Indicador de Trading">
+</div>
+
+<div class="demo-button">
+  <a href="#plan-selector" class="button">7 DIAS DE TESTE GRÁTIS</a>
+</div>
+
+<!-- Tabela -->
+<div class="table">
+  <h1>
+      TRANSFORME AGORA SUA EXPERIÊNCIA COM O <span class="highlight">CASH 23</span>
+  </h1>
+  <p>Opere com a confiança e precisão dos grandes players do mercado</p>
+  
+    <div class="grid-table">
+        <div class="card">
+            <h3>Análise clara e objetiva</h3>
+            <p>Fim da confusão com múltiplos indicadores.</p>
+        </div>
+        <div class="card">
+            <h3>Decisões rápidas e assertivas</h3>
+            <p>Identificação imediata de oportunidades.</p>
+        </div>
+        <div class="card">
+            <h3>Aumento potencial de lucros</h3>
+            <p>Operações mais precisas e frequentes.</p>
+        </div>
+        <div class="card">
+            <h3>Redução do estresse</h3>
+            <p>Menos tempo de análise, mais paz mental.</p>
+        </div>
+        <div class="card">
+            <h3>Adaptabilidade</h3>
+            <p>Funciona em diversos mercados e timeframes.</p>
+        </div>
+        <div class="card">
+            <h3>Curva de aprendizado rápida</h3>
+            <p>Domine o indicador em questão de dias.</p>
+        </div>
+    </div>
+    <div class="demo-button">
+      <a href="#plan-selector" class="button">QUERO SIMPLIFICAR MINHAS OPERAÇÕES</a>
+    </div>
+</div>
+
+<!-- Contagem Regressiva -->
+<section id="contagem">
+    <div class="contagem-container">
+      <h2>OFERTA TERMINA EM:</h2>
+      <div id="timer">00:10:00</div>
+      <p>NÃO DEIXE O TEMPO ACABAR, SUA CHANCE É AGORA</p>
+      <p>FAÇA SUA MELHOR ESCOLHA</p>
+    </div>
+</section-->
+
+  <!-- Benefícios -->
+  <div class="container">
+    <h1>POR QUE A <span style="color:#1E90FF;">CASH 23</span> É A ESCOLHA DOS MAIORES TRADERS?</h1>
+    <p>No Cash 23, oferecemos mais do que um simples indicador, entregamos a solução completa que todo trader precisa para ter mais resultados com maior assertividade.</p>
+
+      <table>
+          <thead>
+              <tr>
+                  <th>Características</th>
+                  <th>Cash 23</th>
+                  <th>Outros</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class=titulo style="color: #fff;">Simplicidade</td>
+                  <td data-label="Cash 23" style="color: green;">Interface limpa e intutiva</td>
+                  <td data-label="Outras" style="color: red;">Telas poluídas e confusas</td>
+              </tr>
+              <tr>
+                  <td class=titulo style="color: #fff;">Precisão</td>
+                  <td data-label="Cash 23" style="color: green;">Algoritimo avançado e testado</td>
+                  <td data-label="Outras" style="color: red;">Anãlises subjetivas</td>
+              </tr>
+              <tr>
+                  <td class=titulo style="color: #fff;">Versibilidade</td>
+                  <td data-label="Cash 23" style="color: green;">Múltiplos mercados e timeframe</td>
+                  <td data-label="Outras" style="color: red;">Limitados e cenários específicos</td>
+              </tr>
+              <tr>
+                  <td class=titulo style="color: #fff;">Suporte</td>
+                  <td data-label="Cash 23" style="color: green;">Equipe dedicada e responsiva</td>
+                  <td data-label="Outras" style="color: red;">Suporte limitado ou inexistente</td>
+              </tr>
+              <tr>
+                  <td class=titulo style="color: #fff;">Atualizações</td>
+                  <td data-label="Cash 23" style="color: green;">Constantes e gratuitas</td>
+                  <td data-label="Outras" style="color: red;">Raras ou pagas</td>
+              </tr>
+          </tbody>
+      </table>
+  </section>
+
+
+  <!-- Estatísticas -->
+  <section id="estatisticas">
+    <div class="container">
+      <h2>Números que Falam por Nós</h2>
+      <div class="estatisticas-lista">
+        <div class="estatistica">
+          <h3>+500</h3>
+          <p>Clientes Satisfeitos</p>
+        </div>
+        <div class="estatistica">
+          <h3>95%</h3>
+          <p>Taxa de Precisão</p>
+        </div>
+        <div class="estatistica">
+          <h3>24/7</h3>
+          <p>Suporte Disponível</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <!--section id="depoimentos">
+    <div class="container">
+      <h2>O Que Nossos Clientes Dizem</h2>
+      <div class="depoimentos-lista">
+        <div class="depoimento">
+          <p>"O indicador mudou completamente minha forma de trabalhar. Recomendo!"</p>
+          <span>- João Silva</span>
+        </div>
+        <div class="depoimento">
+          <p>"Precisão incrível e suporte excelente. Vale cada centavo!"</p>
+          <span>- Maria Souza</span>
+        </div>
+      </div>
+    </div>
+  </section-->
+
+   <!-- Chamada para ação -->
+  <section class="call-to-action">
+    <h1>PARE DE PERDER TEMPO</h1>
+    <h2>Escolha um de nossos planos e comece sua jornada hoje mesmo</h2>
+    <h2>Venha fazer parte dessa revolução</h2>
+
+<!-- Card Container -->
+<section id="plan-selector" class="card-container">
+    <div class="card">
+        <div class="card-header">
+            <p class="card-title">PLANO MENSAL</p>
+            <p class="card-price">R$ 397,00</p>
+            <p class="card-details">Ou 12 x 39,97</p>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Válido por 30 dias</li>
+                <li>Suporte de como instalar</li>
+                <li>Suporte técnico</li>
+                <li></li>
+                <li></li>
+        </div>
+        <div class="card-footer">
+            <button class="card-button button-reset" onclick="window.open('https://wa.me/message/6RCLH6KD3LVCM1', '_blank')">
+                Contratar
+            </button>
+        </div>
+    </div>
+
+  <div class="card">
+    <div class="card-header">
+        <p class="card-title">PLANO SEMESTRAL</p>
+        <p class="card-price">R$797,00</p>
+        <p class="card-details">Ou 12 x R$ 79,97</p>
+    </div>
+    <div class="card-body">
+        <!--button class="card-button">Contratar</button-->
+        <ul>
+            <li>Válido por 6 meses</li>
+            <li>Suporte de como instalar</li>
+            <li>Suporte técnico</li>
+            <li>Acesso ao grupo VIP no watts</li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <button class="card-button button-reset" onclick="window.open('https://wa.me/message/6RCLH6KD3LVCM1', '_blank')">
+            Contratar
+        </button>
+    </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+      <p class="card-title">PLANO ANUAL</p>
+      <p class="card-price">R$ 997,00</p>
+      <p class="card-details">Ou 12 x 99,97</p>
+  </div>
+  <div class="card-body">
+      <!--button class="card-button">Contratar</button-->
+      <ul>
+          <li>Válido por 1 ano</li>
+          <li>Suporte de como instalar</li>
+          <li>Suporte técnico</li>
+          <li>Acesso ao grupo VIP no watts</li>
+          <li>Acesso a sala de operações</li>  
+      </ul>
+  </div>
+  <div class="card-footer">
+      <button class="card-button button-reset" onclick="window.open('https://wa.me/message/6RCLH6KD3LVCM1', '_blank')">
+          Contratar
+      </button>
+  </div>
+</div>
+</section>
+</section>
+
+  <!-- Selos de Garantia -->
+  <section id="garantia">
+    <div class="container">
+      <h2>Garantia de Satisfação</h2>
+      <div class="selos">
+        <img src="image/selo.png" alt="Selo 1" class="selo">
+      </div>
+      <h1>Teste o CASH 23 por 7 dias.</h1> 
+        <h1>Se não gostar ou não ver resultados em suas operações, devolvemos 100% do seu investimento</h1>
+    </div>
+  </section>
+
+  
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Indicador CASH 23. Todos os direitos reservados.</p>
+      <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+    </div>
+  </footer>
+
+  <!-- Script para Contagem Regressiva -->
+  <script>
+    function startTimer(duration, display) {
+      let timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
+    }
+
+    window.onload = function () {
+      const duration = 60 * 10; // 10 minutos
+      const display = document.querySelector('#timer');
+      startTimer(duration, display);
+    };
+  </script>
+</body>
+</html>
